@@ -1,0 +1,32 @@
+{
+  "name": "@dot/i18n",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.jsx"
+  },
+  "imports": {
+    "#~/*": "./src/*"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**'"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/react": "*",
+    "@dot-tools/types": "*",
+    "default-import": "*"
+  },
+  "cspell": {
+    "import": "@dot-tools/cspell/react"
+  },
+  "dependencies": {
+    "i18next": "^21.9.1",
+    "i18next-browser-languagedetector": "^6.1.5",
+    "react-i18next": "^11.18.4"
+  }
+}

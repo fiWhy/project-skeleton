@@ -1,0 +1,57 @@
+{
+  "name": "@dot/intra",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint 'src/**'",
+    "dev": "vite --host",
+    "dev:prepare": "sh ./dev.sh .env",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@andylacko/vite-svg-react-loader": "*",
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/postcss": "*",
+    "@dot-tools/react": "*",
+    "@dot-tools/vite": "*",
+    "@dot/i18n": "*",
+    "@dot/query": "*",
+    "@dot/ui": "*",
+    "@mantine/hooks": "*",
+    "@tanstack/react-query": "*",
+    "clsx": "*",
+    "date-fns": "*",
+    "default-import": "*",
+    "formik": "*",
+    "tailwind-merge": "*",
+    "vite": "*",
+    "vitest": "*",
+    "zod": "*",
+    "lodash-es": "*"
+  },
+  "prettier": "@dot-tools/prettier/tailwind",
+  "cspell": {
+    "import": "@dot-tools/cspell/react",
+    "ignoreWords": [
+      "tailwindcss",
+      "trpc",
+      "daisyui"
+    ]
+  },
+  "dependencies": {
+    "daisyui": "^2.47.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.3.0",
+    "zod-formik-adapter": "^1.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@types/react-router-dom": "^5.3.3"
+  }
+}

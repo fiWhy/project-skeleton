@@ -1,0 +1,12 @@
+FROM node:lts as build
+
+WORKDIR /app
+
+COPY ./. .
+
+RUN npm ci --prefer-offline --no-audit
+
+RUN unset NODE_OPTIONS && \
+    cp packages/client/.env.default packages/client/.env.production && \
+    npm run lint -w @dot/client && \
+    npm run build -w @dot/client

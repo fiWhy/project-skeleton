@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  server:
+    volumes:
+      - './packages/server/src:/app/packages/server/src'
+      - './packages/server/prisma:/app/packages/server/prisma'
+      - './packages/server/package.json:/app/packages/server/package.json'
+      - './packages/services:/app/packages/services'
+      - './packages/models:/app/packages/models'
+    command: npm run start:dev -w @dot/server
+    environment:
+      - ENV=development
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
+    depends_on:
+      - postgres
+    networks:
+      - postgres

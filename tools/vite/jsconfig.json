@@ -1,0 +1,9 @@
+{
+  "extends": "@dot-tools/tsconfig/cjs",
+  "include": ["./src"],
+  "references": [
+    {
+      "path": "./jsconfig.dev.json"
+    }
+  ]
+}

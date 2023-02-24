@@ -1,0 +1,16 @@
+{
+  "extends": "@dot-tools/tsconfig/react",
+  "include": ["**/*.*js", "**/*.ts*", "node_modules/@prisma/client/index"],
+  "references": [
+    {
+      "path": "./tsconfig.dev.json"
+    }
+  ],
+  "compilerOptions": {
+    "types": ["@andylacko/vite-svg-react-loader/svgType"],
+    "paths": {
+      "#~/*": ["./src/*"],
+      "#styles/*": ["./styles/*"]
+    }
+  }
+}

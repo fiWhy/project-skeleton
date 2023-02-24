@@ -1,0 +1,9 @@
+{
+  "extends": "@dot-tools/tsconfig/react",
+  "include": ["./src"],
+  "references": [
+    {
+      "path": "./tsconfig.dev.json"
+    }
+  ]
+}

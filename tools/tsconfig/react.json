@@ -1,0 +1,11 @@
+{
+  "extends": "./default.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["@andylacko/vite-svg-react-loader/svgType"],
+    "noEmit": true,
+    "useDefineForClassFields": true
+  },
+  "files": ["./@types/index.d.ts"]
+}

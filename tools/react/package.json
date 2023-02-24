@@ -1,0 +1,22 @@
+{
+  "name": "@dot-tools/react",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "author": "",
+  "exports": {
+    "./*": "./src/*/index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "formik": "^2.2.9",
+    "framer-motion": "^7.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@dot/auth",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.jsx"
+  },
+  "imports": {
+    "#~/*": "./src/*"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**'"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/react": "*",
+    "@dot-tools/types": "*",
+    "default-import": "*",
+    "@mantine/hooks": "*"
+  },
+  "cspell": {
+    "import": "@dot-tools/cspell/react"
+  },
+  "dependencies": {
+    "@react-oauth/google": "^0.5.0"
+  }
+}

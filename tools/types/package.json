@@ -1,0 +1,14 @@
+{
+  "name": "@dot-tools/types",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "peerDependencies": {
+    "@dot-tools/react": "*"
+  }
+}

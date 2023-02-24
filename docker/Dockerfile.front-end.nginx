@@ -1,0 +1,48 @@
+FROM node:lts-alpine as build
+
+WORKDIR /app
+
+COPY ./. .
+
+ARG CLIENT_ID
+ARG CLIENT_SECRET
+ARG REDIRECT_URI
+ARG CONTACT_EMAIL
+ARG SENDER_EMAIL
+ARG CLIENT_SECRET
+
+ENV CLIENT_ID=${CLIENT_ID}
+ENV CLIENT_SECRET=${CLIENT_SECRET}
+ENV REDIRECT_URI=${REDIRECT_URI}
+ENV CONTACT_EMAIL=${CONTACT_EMAIL}
+ENV SENDER_EMAIL=${SENDER_EMAIL}
+ENV CLIENT_SECRET=${CLIENT_SECRET}
+
+RUN npm ci --prefer-offline --no-audit
+
+VOLUME /app/packages/client/dist
+VOLUME /app/packages/intra/dist
+
+RUN apk update && \
+    apk add gettext libintl
+
+RUN unset NODE_OPTIONS && \
+    npm run dev:prepare -w @dot/intra  && \
+    npm run dev:prepare -w @dot/client  && \
+    npm run dev:prepare -w @dot/server && \
+    npm run db:generate -w @dot/server && \
+    npx concurrently "npm run build -w @dot/client" " npm run build -w @dot/intra"
+
+FROM nginx:stable-alpine
+
+COPY --from=build ./app/packages/client/dist /var/www/client
+COPY --from=build ./app/packages/intra/dist /var/www/intra
+
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/api.conf /etc/nginx/api.conf
+
+
+EXPOSE 80
+EXPOSE 81
+
+CMD ["nginx", "-g", "daemon off;"]

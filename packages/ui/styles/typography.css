@@ -1,0 +1,43 @@
+@layer base {
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping */
+
+  @font-face {
+    font-display: block;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    src: url('@dot/ui/assets/fonts/Poppins-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: block;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    src: url('@dot/ui/assets/fonts/Poppins-Medium.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: block;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    src: url('@dot/ui/assets/fonts/Lato-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: block;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 700;
+    src: url('@dot/ui/assets/fonts/Lato-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: block;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 900;
+    src: url('@dot/ui/assets/fonts/Poppins-Black.ttf') format('truetype');
+  }
+}

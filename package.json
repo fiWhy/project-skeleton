@@ -1,0 +1,40 @@
+{
+  "name": "dotenv",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "workspaces": [
+    "./packages/*",
+    "./tools/*"
+  ],
+  "scripts": {
+    "welcome": "node ./scripts/welcome.mjs",
+    "postinstall": "npm run welcome",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bootstrap": "npm i && npm run dev:prepare --workspaces && ",
+    "lint": "npm run lint --workspaces",
+    "clean": "del \"**/node_modules\"",
+    "reset": "del \"**/node_modules\" && npm run bootstrap",
+    "compose:dev": "sh ./dev.sh",
+    "compose:prod": "sh ./prod.sh",
+    "compose:prod:ssl": "docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.prod.ssl.yml up --build",
+    "compose:prod:d": "npm run compose:prod -- -d",
+    "compose:cert": "sh ./cert.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@dot-tools/vite": "*",
+    "@dot-tools/eslint": "*",
+    "boxen": "^7.0.1",
+    "chalk": "^5.2.0",
+    "default-import": "^1.1.5",
+    "del-cli": "^5.0.0",
+    "glob": "^8.1.0",
+    "typescript": "^4.9.4"
+  },
+  "prettier": "@dot-tools/prettier",
+  "cspell": {
+    "import": "@dot-tools/cspell"
+  }
+}

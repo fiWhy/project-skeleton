@@ -1,0 +1,12 @@
+FROM node:lts as build
+
+WORKDIR /app
+
+COPY ./. .
+
+RUN npm ci --prefer-offline --no-audit
+
+RUN unset NODE_OPTIONS && \
+    cp packages/intra/.env.default packages/intra/.env.production && \
+    npm run lint -w @dot/intra && \
+    npm run build -w @dot/intra

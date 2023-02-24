@@ -1,0 +1,53 @@
+{
+  "name": "@dot/client",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint 'src/**'",
+    "dev": "vite --host",
+    "dev:prepare": "sh ./dev.sh .env",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/postcss": "*",
+    "@dot-tools/react": "*",
+    "@dot-tools/vite": "*",
+    "@dot/i18n": "*",
+    "@dot/ui": "*",
+    "@dot/query": "*",
+    "@mantine/hooks": "*",
+    "clsx": "*",
+    "default-import": "*",
+    "formik": "*",
+    "tailwind-merge": "*",
+    "vite": "*",
+    "zod": "*",
+    "lodash-es": "*",
+    "@andylacko/vite-svg-react-loader": "*",
+    "@tanstack/react-query": "*"
+  },
+  "prettier": "@dot-tools/prettier/tailwind",
+  "cspell": {
+    "import": "@dot-tools/cspell/react",
+    "ignoreWords": [
+      "tailwindcss",
+      "trpc",
+      "Pushkinskaya",
+      "Benidorm"
+    ]
+  },
+  "dependencies": {
+    "react-router-dom": "^6.3.0",
+    "zod-formik-adapter": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3"
+  }
+}

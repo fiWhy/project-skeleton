@@ -1,0 +1,62 @@
+{
+  "name": "@dot/server",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "imports": {
+    "#~/*": "./src/*"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**'",
+    "test": "vitest",
+    "start": "source .env && ts-node src/index.ts",
+    "start:prod": "npm run db:migrate:prod && npm start",
+    "start:dev": "npm run db:migrate:prod && npm run dev",
+    "dev:prepare": "sh ./dev.sh .env",
+    "dev": "nodemon src/index.ts",
+    "db:reset": "prisma migrate reset --preview-feature",
+    "db:seed": "ts-node prisma/seed.ts",
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:migrate:dev": "npx prisma migrate dev",
+    "db:migrate:prod": "npx prisma migrate deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/node": "*",
+    "@dot-tools/types": "*",
+    "date-fns": "*",
+    "default-import": "*",
+    "dotenv": "*",
+    "lodash-es": "*",
+    "nodemon": "*",
+    "ts-node": "*",
+    "vitest": "*",
+    "zod": "*"
+  },
+  "cspell": {
+    "import": "@dot-tools/cspell/core"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.9.0",
+    "@dot/services": "*",
+    "googleapis": "*",
+    "@trpc/server": "^10.0.0-rc.4",
+    "ejs": "^3.1.8",
+    "i18next": "^21.9.1",
+    "i18next-browser-languagedetector": "^6.1.5",
+    "react-i18next": "^11.18.4"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.1",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.9.0",
+    "ts-node": "^10.9.1"
+  }
+}

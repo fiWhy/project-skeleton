@@ -1,0 +1,9 @@
+@import './typography.css';
+@import './base.css';
+
+html,
+body,
+#root {
+  @apply w-full;
+  @apply h-full;
+}

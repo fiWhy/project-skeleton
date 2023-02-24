@@ -1,0 +1,32 @@
+{
+  "name": "@dot/models",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "imports": {
+    "#~/*": "./src/*"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**'"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/types": "*",
+    "zod": "*"
+  },
+  "cspell": {
+    "import": "@dot-tools/cspell/core"
+  },
+  "dependencies": {
+    "@dot-tools/js": "*",
+    "@trpc/server": "^10.0.0-rc.4",
+    "i18next": "^21.9.1",
+    "i18next-browser-languagedetector": "^6.1.5",
+    "react-i18next": "^11.18.4"
+  }
+}

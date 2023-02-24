@@ -1,0 +1,8 @@
+{
+  "extends": "@dot-tools/tsconfig/default",
+  "compilerOptions": {
+    "composite": true,
+    "emitDeclarationOnly": true
+  },
+  "include": [".eslintrc.cjs"]
+}

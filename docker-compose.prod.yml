@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  swag:
+    image: lscr.io/linuxserver/swag
+    depends_on:
+      - server
+    cap_add:
+      - NET_ADMIN
+    env_file:
+      - ./nginx/.env.default
+    volumes:
+      - ./swag:/config
+    ports:
+      - 443:443
+      - 80:80 #optional
+    restart: unless-stopped
+    networks:
+      - server
+  server:
+    build:
+      args:
+        - CLIENT_ID=${CLIENT_ID}
+        - CLIENT_SECRET=${CLIENT_SECRET}
+        - REDIRECT_URI=${REDIRECT_URI}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_DB=${POSTGRES_DB}
+        - WORKSPACE_USER=${WORKSPACE_USER}
+        - REFRESH_TOKEN=${REFRESH_TOKEN}
+        - WORKSPACE_INFO=${WORKSPACE_INFO}
+    command: npm run start:dev -w @dot/server

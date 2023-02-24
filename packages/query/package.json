@@ -1,0 +1,39 @@
+{
+  "name": "@dot/query",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./utils": "./src/utils.js"
+  },
+  "imports": {
+    "#~/*": "./src/*"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**'"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/react": "*",
+    "@dot-tools/types": "*",
+    "@dot/server": "*",
+    "default-import": "*",
+    "zod": "*",
+    "lodash-es": "*",
+    "@mantine/hooks": "*"
+  },
+  "cspell": {
+    "import": "@dot-tools/cspell/react"
+  },
+  "dependencies": {
+    "@dot-tools/js": "*",
+    "@tanstack/react-query": "^4.14.1",
+    "@tanstack/react-query-devtools": "^4.19.1",
+    "@trpc/client": "^10.0.0-rc.4",
+    "@trpc/react-query": "^10.0.0-proxy-beta.26"
+  }
+}

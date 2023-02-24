@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.server
+    ports:
+      - '3030:3030'
+    restart: always
+    env_file:
+      - packages/server/.env
+    depends_on:
+      - postgres
+    networks:
+      - server
+      - postgres
+  postgres:
+    image: postgres
+    env_file:
+      - packages/server/.env
+    networks:
+      - postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+networks:
+  server:
+  postgres:

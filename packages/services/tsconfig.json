@@ -1,0 +1,15 @@
+{
+  "extends": "@dot-tools/tsconfig/default",
+  "include": ["./src"],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "paths": {
+      "#~/*": ["./src/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "./tsconfig.dev.json"
+    }
+  ]
+}

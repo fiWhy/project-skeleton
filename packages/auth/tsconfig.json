@@ -1,0 +1,12 @@
+{
+  "extends": "@dot-tools/tsconfig/react",
+  "include": ["./src", "@types/translations.d.ts"],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  },
+  "references": [
+    {
+      "path": "./tsconfig.dev.json"
+    }
+  ]
+}

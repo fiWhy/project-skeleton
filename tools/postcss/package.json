@@ -1,0 +1,25 @@
+{
+  "name": "@dot-tools/postcss",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.cjs",
+    ".": "./src/default.cjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "postcss-load-config": "^4.0.1",
+    "stylelint": "^14.10.0",
+    "stylelint-config-standard": "^27.0.0",
+    "tailwindcss": "^3.1.8",
+    "postcss-import": "^14.1.0",
+    "postcss-nesting": "^10.1.10"
+  }
+}

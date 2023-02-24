@@ -1,0 +1,56 @@
+{
+  "name": "@dot/ui",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/components/index.js",
+    "./styles": "./styles/index.css",
+    "./tailwind": "./src/tailwind/config.cjs",
+    "./themes": "./src/tailwind/themes/index.cjs",
+    "./components": "./src/components/config.cjs",
+    "./assets/*": "./assets/*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-open",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/react": "^6.5.10",
+    "storybook-dark-mode": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@dot-tools/eslint": "*",
+    "@dot-tools/js": "*",
+    "@dot-tools/postcss": "*",
+    "@dot-tools/react": "*",
+    "@dot-tools/types": "*",
+    "@dot-tools/vite": "*",
+    "vite": "*",
+    "clsx": "*"
+  },
+  "cspell": {
+    "import": "@dot-tools/cspell/react",
+    "ignoreWords": [
+      "tailwindcss",
+      "colord",
+      "lato"
+    ]
+  },
+  "dependencies": {
+    "@mantine/hooks": "^5.2.4",
+    "colord": "^2.9.3",
+    "postcss-import": "^14.1.0",
+    "postcss-nesting": "^10.1.10",
+    "tailwind-merge": "^1.6.0"
+  }
+}

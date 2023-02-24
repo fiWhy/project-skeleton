@@ -1,0 +1,92 @@
+@layer base {
+  body {
+    @apply font-normal;
+    @apply font-normal;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-mono;
+    @apply font-bold;
+  }
+
+  p {
+    @apply leading-extra;
+  }
+
+  h1 {
+    @apply text-3xl;
+    @apply font-medium;
+    @apply leading-main-heading;
+    @apply md:text-4xl;
+  }
+
+  h2 {
+    @apply text-xl;
+    @apply leading-main-heading;
+    @apply sm:text-2xl;
+    @apply sm:leading-10;
+    @apply md:text-4xl;
+    @apply md:leading-main-heading;
+  }
+
+  h3 {
+    @apply text-xl;
+    @apply leading-10;
+    @apply md:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl;
+    @apply leading-8;
+  }
+
+  .conic-red {
+    background: conic-gradient(
+      from -28.67deg at 50% 50%,
+      #ff7b7b 0deg,
+      rgba(255, 106, 106, 0.83) 360deg
+    );
+  }
+
+  .conic-purple {
+    background: conic-gradient(
+      from -30.85deg at 36.76% 50%,
+      #886bfa 0deg,
+      #8d70fc 360deg
+    );
+  }
+
+  .conic-yellow {
+    background: conic-gradient(
+      from -32.56deg at 60.68% 50%,
+      #ffaf51 0deg,
+      #fab655 360deg
+    );
+  }
+
+  .conic-white {
+    background: conic-gradient(
+      from -44.05deg at 50% 50%,
+      #fbfbfb 0deg,
+      #ffffff 360deg
+    );
+  }
+
+  .step-card {
+    @apply flex;
+    @apply flex-1;
+    @apply flex-col;
+    @apply gap-6;
+    @apply rounded-xl;
+    @apply bg-natural-yellow;
+    @apply px-mobile;
+    @apply py-mobile;
+    @apply text-center;
+    @apply shadow-field;
+    @apply md:p-10;
+    @apply xl:py-20;
+    @apply xl:px-24;
+  }
+}
